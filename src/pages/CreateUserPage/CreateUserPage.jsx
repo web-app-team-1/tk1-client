@@ -8,7 +8,9 @@ import LoadingComponent from '../../components/Loading/LoadingComponent';
 import arrowIcon from '../../../public/arrow-back.svg';
 
 function CreateUserPage() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {
+    register, handleSubmit, formState: { errors }, reset,
+  } = useForm();
   const { loading, success, submitForm } = useSubmitForm();
   const navigate = useNavigate();
 
@@ -26,7 +28,7 @@ function CreateUserPage() {
             </div>
             <h3 style={{ marginBottom: '0' }}><strong>Tambah Data</strong></h3>
           </div>
-          <div className={styles['button-group']}>
+          <div className={styles['button-group']} onClick={() => reset()}>
             <button type="button" className="btn btn-primary">Reset Form</button>
           </div>
         </div>
