@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import {
   useFirestoreQuery,
 } from '@react-query-firebase/firestore';
-import { collection, query } from 'firebase/firestore';
+import { collection, query, orderBy } from 'firebase/firestore';
 
 import firestore from '../../database/firestore';
 import styles from './HomePage.module.css';
@@ -14,7 +14,7 @@ import ImageComponent from '../../components/Image/ImageComponent';
 import SpinnerComponent from '../../components/Spinner/SpinnerComponent';
 
 function HomePage() {
-  const queryRef = query(collection(firestore, 'users'));
+  const queryRef = query(collection(firestore, 'users'), orderBy('createdAt', 'desc'));
   const { data, isLoading, isError } = useFirestoreQuery(['users'], queryRef, {
     subscribe: true,
   });
