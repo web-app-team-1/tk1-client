@@ -78,7 +78,7 @@ function CreateUserPage() {
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Foto</label>
                 <div className="input-group mb-3">
-                  <input type="file" className="form-control" id="inputGroupFile02" accept="image/png, image/jpeg, image/doc, image/jpeg, image/pdf" {...register('selfPhoto', { required: true })} />
+                  <input type="file" className="form-control" id="inputGroupFile02" accept="image/png, image/jpeg, image/doc, image/jpeg, application/pdf" {...register('selfPhoto', { required: true })} />
                 </div>
                 {errors.selfPhoto && <FormWarningTextComponent text="Foto wajib diisi" />}
               </div>
@@ -86,7 +86,7 @@ function CreateUserPage() {
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">CV</label>
                 <div className="input-group mb-3">
-                  <input type="file" className="form-control" id="inputGroupFile02" accept="image/png, image/jpeg, image/doc, image/jpeg, image/pdf" {...register('cvPhoto', { required: true })} />
+                  <input type="file" className="form-control" id="inputGroupFile02" accept="image/png, image/jpeg, image/doc, image/jpeg, application/pdf" {...register('cvPhoto', { required: true })} />
                 </div>
                 {errors.cvPhoto && <FormWarningTextComponent text="Foto CV wajib diisi" />}
               </div>
@@ -94,7 +94,7 @@ function CreateUserPage() {
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Sertifikat</label>
                 <div className="input-group mb-3">
-                  <input type="file" className="form-control" id="inputGroupFile02" accept="image/png, image/jpeg, image/doc, image/jpeg, image/pdf" {...register('certificatePhoto', { required: true })} />
+                  <input type="file" className="form-control" id="inputGroupFile02" accept="image/png, image/jpeg, image/doc, image/jpeg, application/pdf" {...register('certificatePhoto', { required: true })} />
                 </div>
                 {errors.certificatePhoto && <FormWarningTextComponent text="Foto sertifikat wajib diisi" />}
               </div>

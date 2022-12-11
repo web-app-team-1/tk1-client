@@ -10,7 +10,7 @@ import { collection, query, orderBy } from 'firebase/firestore';
 import firestore from '../../database/firestore';
 import styles from './HomePage.module.css';
 import HomePageConstants from './HomePageConstants';
-import ImageComponent from '../../components/Image/ImageComponent';
+import AttachmentComponent from '../../components/Attachment/Attachment';
 import SpinnerComponent from '../../components/Spinner/SpinnerComponent';
 
 function HomePage() {
@@ -59,13 +59,13 @@ function HomePage() {
                             <td>{user.gender}</td>
                             <td>{dayjs(user.birthDate.toDate()).format('DD MMM YYYY')}</td>
                             <td>
-                              <ImageComponent imageUrl={user.selfPhoto} />
+                              <AttachmentComponent url={user.selfPhoto} />
                             </td>
                             <td>
-                              <ImageComponent imageUrl={user.cvPhoto} />
+                              <AttachmentComponent url={user.cvPhoto} />
                             </td>
                             <td>
-                              <ImageComponent imageUrl={user.certificatePhoto} />
+                              <AttachmentComponent url={user.certificatePhoto} />
                             </td>
                           </tr>
                         );
