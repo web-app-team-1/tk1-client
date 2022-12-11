@@ -27,7 +27,6 @@ function CreateUserPage() {
             <h3 style={{ marginBottom: '0' }}><strong>Tambah Data</strong></h3>
           </div>
           <div className={styles['button-group']}>
-            <button type="submit" className="btn btn-primary">Submit</button>
             <button type="button" className="btn btn-primary">Reset Form</button>
           </div>
         </div>
@@ -50,10 +49,19 @@ function CreateUserPage() {
               <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Jenis Kelamin</label>
                 <div>
-                  <select {...register('gender')}>
+                  <div>
+                    <input type="radio" value="L" {...register('gender', { required: true })} />
+                    Laki-laki
+                  </div>
+                  <div>
+                    <input type="radio" value="F" {...register('gender', { required: true })} />
+                    Perempuan
+                  </div>
+                  {errors.gender && <FormWarningTextComponent text="Jenis kelamin wajib diisi" />}
+                  {/* <select {...register('gender')}>
                     <option value="M">Laki-laki</option>
                     <option value="F">Perempuan</option>
-                  </select>
+                  </select> */}
                 </div>
               </div>
 
